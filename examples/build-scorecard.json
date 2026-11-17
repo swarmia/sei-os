@@ -1,0 +1,400 @@
+{
+  "eyebrow": "Build scorecard · sample data",
+  "title": "Engineering effectiveness, Q3 2026",
+  "subtitle": "Acme Corp (fictional). Where we stand on AI leverage, effectiveness and return on engineering.",
+  "scope": {
+    "teams": "All engineering, 9 teams, 112 FTE",
+    "timeframe": "Jul 1 – Sep 30, 2026",
+    "comparison": "Q2 2026"
+  },
+  "summary": [
+    "AI adoption is broad (**71%** of merged PRs AI-assisted, up from 58%), but only **1.2%** of merged work is delegated to autonomous agents, well below the top quartile (3.9%).",
+    "Review is now the bottleneck: median time to first review rose to **14 h** (from 7 h) while batch size grew **38%**. Review accounts for 52% of total cycle time.",
+    "KTLO crept up from 27% to **34%** of effort, driven by incident follow-ups in Billing and Platform. Change failure rate held at 9% (n = 41 failures).",
+    "**62%** of effort is linked to initiatives; two of five initiatives are tracking late."
+  ],
+  "decision": "Fund a review-load working agreement (first review < 1 business day, PRs < 500 lines) in the four slowest teams before adding more AI seats.",
+  "kpis": [
+    {
+      "label": "AI-assisted PRs",
+      "value": "71",
+      "unit": "%",
+      "delta": "+13 pts vs Q2",
+      "deltaDirection": "up-good",
+      "status": "good",
+      "note": "Top quartile 82%"
+    },
+    {
+      "label": "PR cycle time (median)",
+      "value": "31",
+      "unit": "h",
+      "delta": "+9 h vs Q2",
+      "deltaDirection": "up-bad",
+      "status": "good",
+      "note": "n = 4,210"
+    },
+    {
+      "label": "Time to first review (median)",
+      "value": "14",
+      "unit": "h",
+      "delta": "+7 h vs Q2",
+      "deltaDirection": "up-bad",
+      "status": "good"
+    },
+    {
+      "label": "Change failure rate",
+      "value": "9",
+      "unit": "%",
+      "delta": "±0 pts",
+      "deltaDirection": "flat",
+      "status": "good",
+      "note": "41 failures"
+    },
+    {
+      "label": "KTLO share of effort",
+      "value": "34",
+      "unit": "%",
+      "delta": "+7 pts vs Q2",
+      "deltaDirection": "up-bad",
+      "status": "good"
+    },
+    {
+      "label": "Effort on initiatives",
+      "value": "62",
+      "unit": "%",
+      "delta": "+4 pts vs Q2",
+      "deltaDirection": "up-good",
+      "note": "2 of 5 initiatives late"
+    }
+  ],
+  "sections": [
+    {
+      "title": "Scorecard",
+      "body": "Each metric group is rated against Swarmia benchmarks where they exist, and against the organization's own trend where they do not.",
+      "charts": [
+        {
+          "type": "scorecard",
+          "pillars": [
+            {
+              "name": "AI leverage",
+              "question": "Are we creating conditions for success for AI tools?",
+              "groups": [
+                {
+                  "name": "AI adoption",
+                  "status": "good",
+                  "headline": "71% of merged PRs AI-assisted; 84% weekly active"
+                },
+                {
+                  "name": "AI readiness",
+                  "status": "attention",
+                  "headline": "38% of active repos have agent instructions; CI p50 19 min"
+                },
+                {
+                  "name": "AI autonomy",
+                  "status": "attention",
+                  "headline": "1.2% of merged PRs by cloud agents (p75: 3.9%)"
+                },
+                {
+                  "name": "AI development culture",
+                  "status": "unknown",
+                  "headline": "Not measured yet: add 3 survey questions"
+                }
+              ]
+            },
+            {
+              "name": "Effectiveness",
+              "question": "Are we delivering value faster, and is the pace sustainable?",
+              "groups": [
+                {
+                  "name": "Developer productivity",
+                  "status": "good",
+                  "headline": "Cycle time 31 h; review is 52% of it"
+                },
+                {
+                  "name": "Quality and maintenance",
+                  "status": "good",
+                  "headline": "CFR 9%; KTLO 34% and rising"
+                },
+                {
+                  "name": "Developer experience",
+                  "status": "good",
+                  "headline": "Satisfaction 3.9 / 5; release confidence down 0.3"
+                }
+              ]
+            },
+            {
+              "name": "Return on engineering",
+              "question": "What business value does engineering investment produce?",
+              "groups": [
+                {
+                  "name": "Business outcomes",
+                  "status": "good",
+                  "headline": "62% of effort on initiatives; 2 of 5 late"
+                },
+                {
+                  "name": "Engineering cost",
+                  "status": "great",
+                  "headline": "AI is 6% of engineering cost; $41 AI per merged PR"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Where delivery waits",
+      "body": "Cycle time without draft time grew mostly in review. Teams where batch size grew fastest also waited longest for a first review.",
+      "charts": [
+        {
+          "type": "bar",
+          "title": "Median PR cycle time by team",
+          "caption": "Last 90 days, weekends excluded. Lines mark the Great (24 h) and Good (5 working days) bands.",
+          "unit": "h",
+          "lowerIsBetter": true,
+          "bands": {
+            "great": 24,
+            "good": 120
+          },
+          "categoryLabel": "Team",
+          "valueLabel": "Median cycle time",
+          "data": [
+            {
+              "label": "Checkout",
+              "value": 16,
+              "n": 612
+            },
+            {
+              "label": "Search",
+              "value": 21,
+              "n": 540
+            },
+            {
+              "label": "Mobile",
+              "value": 27,
+              "n": 488
+            },
+            {
+              "label": "Payments",
+              "value": 29,
+              "n": 455
+            },
+            {
+              "label": "Data",
+              "value": 34,
+              "n": 301
+            },
+            {
+              "label": "Growth",
+              "value": 38,
+              "n": 520
+            },
+            {
+              "label": "Identity",
+              "value": 44,
+              "n": 260
+            },
+            {
+              "label": "Billing",
+              "value": 63,
+              "n": 395
+            },
+            {
+              "label": "Platform",
+              "value": 131,
+              "n": 239,
+              "note": "Two long-running infra migrations"
+            }
+          ]
+        },
+        {
+          "type": "stacked",
+          "title": "Where cycle time goes, by team",
+          "caption": "Share of total cycle time per stage, draft time excluded. Review includes waiting for the first review.",
+          "percent": true,
+          "unit": "h",
+          "series": [
+            "In progress",
+            "Review (incl. waiting)",
+            "Waiting to merge"
+          ],
+          "rows": [
+            {
+              "label": "Checkout",
+              "values": [
+                6,
+                9,
+                1
+              ]
+            },
+            {
+              "label": "Payments",
+              "values": [
+                9,
+                18,
+                2
+              ]
+            },
+            {
+              "label": "Growth",
+              "values": [
+                10,
+                25,
+                3
+              ]
+            },
+            {
+              "label": "Billing",
+              "values": [
+                14,
+                43,
+                6
+              ]
+            },
+            {
+              "label": "Platform",
+              "values": [
+                38,
+                85,
+                8
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "AI leverage over time",
+      "charts": [
+        {
+          "type": "line",
+          "title": "AI-assisted and agent-authored share of merged PRs",
+          "unit": "%",
+          "x": [
+            "Apr",
+            "May",
+            "Jun",
+            "Jul",
+            "Aug",
+            "Sep"
+          ],
+          "series": [
+            {
+              "name": "AI-assisted",
+              "values": [
+                52,
+                56,
+                58,
+                63,
+                67,
+                71
+              ]
+            },
+            {
+              "name": "Cloud agent",
+              "values": [
+                0.2,
+                0.3,
+                0.5,
+                0.7,
+                0.9,
+                1.2
+              ]
+            }
+          ],
+          "reference": {
+            "value": 82,
+            "label": "p75: 82%"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Where engineering time goes",
+      "charts": [
+        {
+          "type": "stacked",
+          "title": "Investment balance by team",
+          "caption": "Effort in FTE, Q3 2026",
+          "percent": true,
+          "unit": "FTE",
+          "series": [
+            "New things",
+            "Improving things",
+            "Productivity",
+            "KTLO"
+          ],
+          "rows": [
+            {
+              "label": "Checkout",
+              "values": [
+                7.1,
+                2.2,
+                1.1,
+                2.4
+              ]
+            },
+            {
+              "label": "Growth",
+              "values": [
+                8.4,
+                2.0,
+                0.6,
+                2.9
+              ]
+            },
+            {
+              "label": "Payments",
+              "values": [
+                5.2,
+                2.6,
+                0.8,
+                4.1
+              ]
+            },
+            {
+              "label": "Billing",
+              "values": [
+                3.0,
+                1.9,
+                0.5,
+                6.6
+              ]
+            },
+            {
+              "label": "Platform",
+              "values": [
+                2.1,
+                3.0,
+                4.2,
+                6.8
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "method": {
+    "sources": [
+      "Swarmia MCP: `code/cycle-time/summary` (P50, weekends excluded), `metrics/dora`, `ai/adoption/users-and-licenses`, `aiAgentPullRequestsByTeamsReport`, EntityQuery on Team → effortMonthlies.",
+      "Benchmarks: swarmia.com/benchmarks and the Build framework (Q2 2026 customer percentiles)."
+    ],
+    "caveats": [
+      "Sample data for illustration. Acme Corp is fictional.",
+      "Change failure rate rests on 41 failures; treat quarter-over-quarter moves under 3 points as noise.",
+      "8% of effort is uncategorized and excluded from the investment shares."
+    ],
+    "links": [
+      {
+        "text": "Build framework",
+        "href": "https://www.swarmia.com/framework/"
+      },
+      {
+        "text": "Swarmia benchmarks",
+        "href": "https://www.swarmia.com/benchmarks/"
+      }
+    ]
+  },
+  "generatedAt": "2026-10-22"
+}

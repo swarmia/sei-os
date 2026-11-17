@@ -1,0 +1,11 @@
+# Rendered reports contain company data. Never commit them.
+sei-reports/
+*.report.html
+
+.DS_Store
+.env
+.env.*
+!.env.example
+__pycache__/
+*.pyc
+dist/

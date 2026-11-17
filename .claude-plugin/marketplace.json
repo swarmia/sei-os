@@ -1,0 +1,11 @@
+{
+  "name": "swarmia",
+  "owner": { "name": "Swarmia", "url": "https://www.swarmia.com" },
+  "plugins": [
+    {
+      "name": "sei-os",
+      "source": "./",
+      "description": "Company context, the Build framework and shared skills for engineering leaders."
+    }
+  ]
+}

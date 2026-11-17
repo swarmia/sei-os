@@ -1,0 +1,10 @@
+{
+  "name": "sei-os",
+  "version": "0.1.0",
+  "description": "An engineering-leadership rule book for AI agents: your company context, Swarmia's Build framework and book, and shared skills for every leader.",
+  "author": { "name": "Swarmia", "url": "https://www.swarmia.com" },
+  "homepage": "https://github.com/swarmia/sei-os",
+  "repository": "https://github.com/swarmia/sei-os",
+  "license": "Apache-2.0",
+  "keywords": ["engineering-leadership", "build-framework", "swarmia", "rule-book", "developer-experience", "agent-skills"]
+}

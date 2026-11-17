@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "swarmia": {
+      "type": "http",
+      "url": "https://app.swarmia.com/api/v1/mcp"
+    }
+  }
+}

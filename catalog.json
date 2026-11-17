@@ -1,0 +1,69 @@
+{
+  "$comment": "Source of truth for the skill catalog. Every skill lists the \"foundation\" bundle (shared Build vocabulary and answer rules; scripts/validate.py enforces it). scripts/sync_shared.py copies each skill's shared files (knowledge/, shared/, examples/ and the company/ rule book) into the skill folder, and scripts/validate.py checks that SKILL.md files match this list. Add your own skills here.",
+  "version": "0.1.0",
+  "roles": {
+    "cto": "CTO / VP Engineering",
+    "director": "Engineering director",
+    "em": "Engineering manager",
+    "platform": "Platform & DevEx lead",
+    "pm": "Product manager",
+    "finance": "Operations & finance"
+  },
+  "pillars": {
+    "ai-leverage": "AI leverage",
+    "effectiveness": "Effectiveness",
+    "return-on-engineering": "Return on engineering",
+    "foundation": "Foundation"
+  },
+  "bundles": {
+    "foundation": ["knowledge/answer-contract.md", "knowledge/benchmarks.md", "knowledge/build-framework.md", "knowledge/build-concepts.md"],
+    "company": ["company/", "!company/teams/"],
+    "teams-tooling": ["shared/scripts/teams.py"],
+    "report": ["knowledge/report-schema.md", "shared/assets/report-template.html", "shared/scripts/render_report.py"],
+    "scorecard-example": ["examples/build-scorecard.json"]
+  },
+  "skills": [
+    {
+      "name": "ask-rulebook",
+      "pillar": "foundation",
+      "roles": ["cto", "director", "em", "platform", "pm"],
+      "bundles": ["foundation", "company"],
+      "summary": "How do we do things here? Answers from the company rule book, with sources, gaps and stale files flagged."
+    },
+    {
+      "name": "build-coach",
+      "pillar": "foundation",
+      "roles": ["cto", "director", "em", "platform"],
+      "bundles": ["foundation", "company"],
+      "summary": "Advice from the Build book and framework, fitted to the company's goals, principles, culture and past decisions."
+    },
+    {
+      "name": "build-scorecard",
+      "pillar": "foundation",
+      "roles": ["cto", "director"],
+      "bundles": ["foundation", "company", "report", "scorecard-example"],
+      "summary": "Baseline the organization across the Build framework's nine metric groups, from data or a structured self-assessment."
+    },
+    {
+      "name": "company-context",
+      "pillar": "foundation",
+      "roles": ["cto", "director", "em", "platform"],
+      "bundles": ["foundation"],
+      "summary": "Set up, extend and audit the company rule book: goals, metrics, principles, culture, career framework, surveys, decisions."
+    },
+    {
+      "name": "pull-teams",
+      "pillar": "foundation",
+      "roles": ["cto", "director", "em", "platform"],
+      "bundles": ["foundation", "teams-tooling"],
+      "summary": "Pull the team structure from Swarmia into company/teams/, keeping local missions, ownership and attributes."
+    },
+    {
+      "name": "push-teams",
+      "pillar": "foundation",
+      "roles": ["cto", "director", "em", "platform"],
+      "bundles": ["foundation", "teams-tooling"],
+      "summary": "Push the reviewed team structure from company/teams/ to Swarmia, previewed and confirmed before anything changes."
+    }
+  ]
+}

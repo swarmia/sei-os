@@ -1,0 +1,27 @@
+SEI OS
+Copyright 2026 Swarmia Oy
+
+This product includes software and documentation developed by Swarmia (https://www.swarmia.com),
+licensed under the Apache License, Version 2.0 (see LICENSE), except as stated below.
+
+Build framework and Build book
+------------------------------
+The Apache License 2.0 applies to everything in this repository, including
+knowledge/build-framework.md and knowledge/build-concepts.md and their copies inside each skill.
+Those two files hold only structure, names, links and short notes written for this repository.
+
+The texts they point to are not included and are not licensed by this repository. They are
+Copyright 2026 Swarmia Oy, all rights reserved:
+
+  - "The Build framework" (https://www.swarmia.com/framework/)
+  - "Build: Elements of an Effective Software Organization" by Rebecca Murphey and Otto Hilska
+    (https://www.swarmia.com/build/)
+
+Read them on the web and cite them when quoting.
+
+Company content
+---------------
+Content you add under company/ is yours and is not covered by the notices above.
+
+"Swarmia" and the Swarmia logo are trademarks of Swarmia Oy. The Apache License does not grant
+permission to use them except as required for describing the origin of this work.
